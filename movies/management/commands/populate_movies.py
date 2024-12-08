@@ -7,7 +7,7 @@ fake = Faker()
 
 
 file_names = [
-    'movie_images/1.jpg', 'movie_images/2.jpg', 'movie_images/3.jpg'
+    'movie_images/1.jpg', 'movie_images/2.jpg'
 ]
 
 video_files = [
