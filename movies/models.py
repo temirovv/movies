@@ -1,8 +1,9 @@
 from django.db.models import Model, CharField, IntegerField, \
     ForeignKey, TextField, DateField, FloatField, BooleanField,\
     DateTimeField, TextChoices, ImageField, FileField, CASCADE,\
-    SlugField
+    SlugField, ManyToManyField
 from django.template.defaultfilters import slugify
+from django.db.utils import IntegrityError
 
 
 class QualityChoices(TextChoices):
@@ -53,15 +54,21 @@ class Movie(Model):
                      default=MovieTypeChoices.REGULAR, 
                      help_text="Kino joylashuvi")
     
-    slug = SlugField(unique=True)
+    slug = SlugField(unique=True, null=True, blank=True)
     created_at = DateTimeField(auto_now=True)
     updated_at = DateTimeField(auto_now_add=True)
+    movie_genre = ManyToManyField('Genre', through='MovieGenre')
 
     def __str__(self):
         return self.title
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
+        if self.slug is None:
+            try:
+                self.slug = slugify(self.title)
+            except IntegrityError:
+                self.slug += str(1)                
+
         super().save(*args, **kwargs)
 
 
