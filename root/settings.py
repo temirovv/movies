@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-oi!oqscdbf&bpexankakx^_lsgo(q32*96$v!3$zrh5zjz-58j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['188.225.34.204', 'http://188.225.34.204', 'http://bahromtravel.uz/', 'www.bahromtravel.uz']
+ALLOWED_HOSTS = ['188.225.34.204', 'http://188.225.34.204', 'http://bahromtravel.uz/', 'www.bahromtravel.uz', 'bahromtravel.uz']
 
 
 # Application definition
