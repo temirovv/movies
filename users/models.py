@@ -14,7 +14,7 @@ class UserReview(Model):
     user = ForeignKey(User, on_delete=CASCADE)
     movie = ForeignKey(Movie, on_delete=CASCADE)
     comment = TextField()
-    posted = DateTimeField(auto_created=True)
+    posted = DateTimeField(auto_now_add=True)
 
     def time_posted(self):
         delta = now() - self.posted
