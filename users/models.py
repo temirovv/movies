@@ -17,7 +17,7 @@ class UserReview(Model):
     posted = DateTimeField(auto_created=True)
 
     def time_posted(self):
-        delta = now() - self.posted_at
+        delta = now() - self.posted
 
         if delta.days > 0:
             if delta.days == 1:
