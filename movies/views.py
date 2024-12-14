@@ -1,7 +1,7 @@
 from django.core.cache import cache
 from django.shortcuts import render
 from django.contrib.auth import get_user_model
-from django.db.models import Q
+from django.db.models import Q, Max
 
 from .models import Movie, MovieGenre, \
     MovieStatusChoices, MovieTypeChoices, Genre
