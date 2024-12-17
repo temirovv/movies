@@ -1,7 +1,7 @@
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -14,7 +14,6 @@ SECRET_KEY = 'django-insecure-oi!oqscdbf&bpexankakx^_lsgo(q32*96$v!3$zrh5zjz-58j
 DEBUG = False
 
 ALLOWED_HOSTS = ['188.225.34.204', 'http://188.225.34.204', 'http://bahromtravel.uz/', 'www.bahromtravel.uz', 'bahromtravel.uz']
-
 
 # Application definition
 
